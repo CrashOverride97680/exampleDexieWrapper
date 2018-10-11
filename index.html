@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+			So very fast and easy create the db with this wrapper,
+		    this pagee is an example by crashOverride in my account 
+			I create an experiment with IndexedDb native
+			sintacs es6
+-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IndexedDB with dexie</title>
+ 	<script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+<body>
+<script>
+var mydb = new Dexie("DB");
+	mydb.version(1).stores({
+		friend:'id++,Nome',
+	});
+	mydb.Amici.put({
+		friend:"Giorgia"
+	});
+	mydb.Amici.get(1, (data) => {
+		console.log(data);
+	});
+</script>
+</body>
+</html>
